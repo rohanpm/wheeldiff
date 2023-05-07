@@ -17,7 +17,7 @@ Find differences between two Python wheels.
 
 `wheeldiff` is a command-line tool to show differences between two Python wheels.
 
-`wheeldiff` exits with an exit code of 1 if any differences were found, or 0 if no
+`wheeldiff` exits with an exit code of 2 if any differences were found, or 0 if no
 differences were found.
 
 Some types of difference can be ignored via the following options:
@@ -70,7 +70,7 @@ $ wheeldiff rpmdyn-2023.5.7-py3-none-any.whl rpmdyn-2023.5.7.3-py3-none-any.whl;
 +rpmdyn-2023.5.7.3.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
 +rpmdyn-2023.5.7.3.dist-info/top_level.txt,sha256=juyQtSPbaEJ3AiMzwEI5aX67FyfxqrpJ-mVuZQayvIU,7
 +rpmdyn-2023.5.7.3.dist-info/RECORD,,
-1
+2
 ```
 
 Suppressing version number differences:
@@ -95,7 +95,7 @@ $ wheeldiff rpmdyn-2023.5.7-py3-none-any.whl rpmdyn-2023.5.7.3-py3-none-any.whl 
  rpmdyn-$VERSION.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
  rpmdyn-$VERSION.dist-info/top_level.txt,sha256=juyQtSPbaEJ3AiMzwEI5aX67FyfxqrpJ-mVuZQayvIU,7
  rpmdyn-$VERSION.dist-info/RECORD,,
-1
+2
 ```
 
 Suppressing version and RECORD differences; in this case, there are no remaining

@@ -195,7 +195,7 @@ class Command:
                     elif record.diff_type == DiffType.TEXT_DIFFERS:
                         self.print_unified_diff(unpacked1, unpacked2, record.path)
 
-        sys.exit(0 if not accum else 1)
+        sys.exit(0 if not accum else 2)
 
 
 def entry_point():
