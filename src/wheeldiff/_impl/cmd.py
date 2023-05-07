@@ -71,7 +71,7 @@ def normalize(root: str, version: str, version_in_content: bool):
             normalize(str(path), version, version_in_content)
         elif is_text(path) and version_in_content:
             content = path.read_text()
-            new_content = version_re.sub(content, "\1$VERSION\2")
+            new_content = version_re.sub(content, r"\1$VERSION\2")
             if content != new_content:
                 LOG.debug("Rewrote version in %s", path)
                 path.write_text(new_content)
@@ -195,7 +195,7 @@ class Command:
                     elif record.diff_type == DiffType.TEXT_DIFFERS:
                         self.print_unified_diff(unpacked1, unpacked2, record.path)
 
-        sys.exit(0 if not accum else 1)
+        sys.exit(0 if not accum else 2)
 
 
 def entry_point():
