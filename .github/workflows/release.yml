@@ -37,7 +37,7 @@ jobs:
       - name: Prepare for wheel check
         run: |
           pip download --no-deps --only-binary :all: --implementation py --platform none wheeldiff
-          pip install wheeldiff
+          pip install .
 
       - name: Check if wheel content changed
         id: wheeldiff
