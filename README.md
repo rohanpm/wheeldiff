@@ -31,7 +31,7 @@ Some types of difference can be ignored via the following options:
 Finding various differences:
 
 ```
-$ wheeldiff rpmdyn-2023.5.7-py3-none-any.whl rpmdyn-2023.5.7.3-py3-none-any.whl
+$ wheeldiff rpmdyn-2023.5.7-py3-none-any.whl rpmdyn-2023.5.7.3-py3-none-any.whl; $?
 --- rpmdyn-2023.5.7-py3-none-any.whl/rpmdyn-$VERSION/rpmdyn/__init__.py
 +++ rpmdyn-2023.5.7.3-py3-none-any.whl/rpmdyn-$VERSION/rpmdyn/__init__.py
 @@ -1 +1 @@
