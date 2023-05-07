@@ -42,6 +42,7 @@ jobs:
       - name: Check if wheel content changed
         id: wheeldiff
         run: |
+          set +e
           wheeldiff --ignore version,record wheeldiff-*.whl dist/wheeldiff-*.whl
           echo "diff=$?" >> "$GITHUB_OUTPUT"
 

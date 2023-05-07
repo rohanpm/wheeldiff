@@ -61,6 +61,8 @@ def normalize(root: str, version: str, version_in_content: bool):
             normalize(str(path), version, version_in_content)
         elif version_in_content:
             content = path.read_bytes()
+            # FIXME: this needs to be smarter, to ensure it only replaces
+            # versions which represent an entire word.
             new_content = content.replace(version.encode(), b"$VERSION")
             if content != new_content:
                 LOG.debug("Rewrote version in %s", path)
