@@ -34,5 +34,17 @@ jobs:
         run: |
           python -mbuild
 
+      - name: Prepare for wheel check
+        run: |
+          pip download --no-deps --only-binary :all: --implementation py --platform none wheeldiff
+          pip install wheeldiff
+
+      - name: Check if wheel content changed
+        id: wheeldiff
+        run: |
+          wheeldiff --ignore version,record wheeldiff-*.whl dist/wheeldiff-*.whl
+          echo "diff=$?" >> "$GITHUB_OUTPUT"
+
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        if: steps.wheeldiff.outputs.diff == '1'
