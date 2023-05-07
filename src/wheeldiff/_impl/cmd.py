@@ -4,6 +4,7 @@ import filecmp
 import logging
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -48,6 +49,15 @@ def is_text(path: str) -> bool:
 def normalize(root: str, version: str, version_in_content: bool):
     LOG.debug("Normalizing under %s (version=%s)", root, version)
 
+    version_re = re.compile(
+        rf"""
+          (^|[-_/'"\s])         # word boundary prior to version
+          {re.escape(version)}  # the version
+          ($|[-_/'"\s])         # word boundary after version
+        """,
+        re.MULTILINE | re.VERBOSE,
+    )
+
     for entry in os.scandir(root):
         path = pathlib.Path(entry.path)
 
@@ -59,14 +69,12 @@ def normalize(root: str, version: str, version_in_content: bool):
 
         if entry.is_dir():
             normalize(str(path), version, version_in_content)
-        elif version_in_content:
-            content = path.read_bytes()
-            # FIXME: this needs to be smarter, to ensure it only replaces
-            # versions which represent an entire word.
-            new_content = content.replace(version.encode(), b"$VERSION")
+        elif is_text(path) and version_in_content:
+            content = path.read_text()
+            new_content = version_re.sub(content, "\1$VERSION\2")
             if content != new_content:
                 LOG.debug("Rewrote version in %s", path)
-                path.write_bytes(new_content)
+                path.write_text(new_content)
 
 
 class UnpackedWheel:
