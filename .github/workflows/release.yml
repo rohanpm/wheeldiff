@@ -43,7 +43,8 @@ jobs:
         id: wheeldiff
         run: |
           set +e
-          wheeldiff --ignore version,record wheeldiff-*.whl dist/wheeldiff-*.whl
+          set -x
+          wheeldiff --debug --ignore version,record wheeldiff-*.whl dist/wheeldiff-*.whl
           echo "diff=$?" >> "$GITHUB_OUTPUT"
 
       - name: Publish package distributions to PyPI
