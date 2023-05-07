@@ -1,0 +1,26 @@
+[project]
+name = "wheeldiff"
+description = "Diff two Python wheels"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Rohan McGovern", email = "rohan@mcgovern.id.au" }]
+maintainers = [{ name = "Rohan McGovern", email = "rohan@mcgovern.id.au" }]
+requires-python = ">= 3.8"
+dynamic = ["version", "dependencies"]
+
+[project.scripts]
+wheeldiff = "wheeldiff._impl:entry_point"
+
+[project.urls]
+homepage = "https://github.com/rohanpm/wheeldiff"
+
+[tool.setuptools.dynamic]
+version = { attr = "wheeldiff.__version__" }
+dependencies = { file = "requirements.in" }
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["buildsys-dateversion"]
+build-backend = "buildsys_dateversion"
