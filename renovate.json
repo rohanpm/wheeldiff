@@ -11,5 +11,12 @@
     "fileMatch": [
       "requirements[^/]*\\.txt$"
     ]
-  }
+  },
+  "automerge": true,
+  "schedule": [
+    "every weekend"
+  ],
+  "automergeSchedule": [
+    "on tuesday"
+  ]
 }
