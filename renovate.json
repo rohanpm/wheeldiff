@@ -11,11 +11,5 @@
     "fileMatch": [
       "requirements[^/]*\\.txt$"
     ]
-  },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": [
-      "at any time"
-    ]
   }
 }
