@@ -11,7 +11,7 @@ jobs:
   pypi-publish:
     name: Upload release to PyPI
     needs: [run-ci]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     environment:
       name: pypi
       url: https://pypi.org/p/wheeldiff
