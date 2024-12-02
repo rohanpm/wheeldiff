@@ -80,9 +80,9 @@ pluggy==1.5.0 \
     --hash=sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1 \
     --hash=sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669
     # via pytest
-pytest==8.3.3 \
-    --hash=sha256:70b98107bd648308a7952b06e6ca9a50bc660be218d53c257cc1fc94fda10181 \
-    --hash=sha256:a6853c7375b2663155079443d2e45de913a911a11d669df02a50814944db57b2
+pytest==8.3.4 \
+    --hash=sha256:50e16d954148559c9a74109af1eaf0c945ba2d8f30f0a3d3335edde19788b6f6 \
+    --hash=sha256:965370d062bce11e73868e0335abac31b4d3de0e82f4007408d242b4f8610761
     # via
     #   -r test-requirements.in
     #   pytest-cov
@@ -94,7 +94,7 @@ wheel==0.45.1 \
     --hash=sha256:661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729 \
     --hash=sha256:708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248
     # via -r /tmp/renovate/repos/github/rohanpm/wheeldiff/requirements.in
-wheel-filename==1.4.1 \
-    --hash=sha256:a53d8ece58822eb27b3a8841c6b4bebf357f19ff0dd83ce9179756f64a4bc0df \
-    --hash=sha256:e2e1eb0780910a0148358252aad6394cc674250686c56c39aa379493438370b3
+wheel-filename==1.4.2 \
+    --hash=sha256:3fa599046443d4ca830d06e3d180cd0a675d5871af0a68daa5623318bb4d17e3 \
+    --hash=sha256:87891c465dcbb40b40394a906f01a93214bdd51aa5d25e3a9a59cae62bc298fd
     # via -r /tmp/renovate/repos/github/rohanpm/wheeldiff/requirements.in
