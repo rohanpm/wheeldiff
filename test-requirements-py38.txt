@@ -147,8 +147,8 @@ typing-extensions==4.13.2 \
 wheel==0.45.1 \
     --hash=sha256:661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729 \
     --hash=sha256:708e7481cc80179af0e556bbf0cc00b8444c7321e2700b8d8580231d13017248
-    # via -r /tmp/renovate/repos/github/rohanpm/wheeldiff/requirements.in
+    # via -r requirements.in
 wheel-filename==1.4.2 \
     --hash=sha256:3fa599046443d4ca830d06e3d180cd0a675d5871af0a68daa5623318bb4d17e3 \
     --hash=sha256:87891c465dcbb40b40394a906f01a93214bdd51aa5d25e3a9a59cae62bc298fd
-    # via -r /tmp/renovate/repos/github/rohanpm/wheeldiff/requirements.in
+    # via -r requirements.in
